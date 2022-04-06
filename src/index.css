@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Hurricane&display=swap');
+
 body {
-  margin: 0;
+  width: 90%;
+  margin: 0 auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +13,29 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.page-header {
+  font-family: 'Dosis', sans-serif;
+  font-size: 45px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: #965fef;
+}
+
+.bookshelf {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 3rem;
+  justify-content: center;
+  color: white;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  border-radius: 20px;
+  background-color: rgb(15, 110, 101);
+  background-image: repeating-linear-gradient(180deg, transparent, rgba(88, 47, 154, 0.3) 48%, rgba(101, 54, 177, 0.35) 77%, rgba(119, 64, 208, 0.41) 100%, #965fef 0, #965fef 0, #965fef 0, #462f6a);
+}
+
+.book-title {
+  font-size: medium;
 }
