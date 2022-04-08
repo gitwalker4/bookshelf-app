@@ -19,7 +19,7 @@ const Header = () => {
     <div className='header'>
       <h1 className='header-title'>On The Bookshelf</h1>
       <ThemeProvider theme={theme}>
-        <Button color='primary' variant='outlined' onClick={() => dispatch(fetchBooksRequest())}>Load Bookshelf</Button>
+        <Button id='bookshelf-button' color='primary' variant='outlined' onClick={() => dispatch(fetchBooksRequest())}>Load Books</Button>
       </ThemeProvider>
     </div>
   )

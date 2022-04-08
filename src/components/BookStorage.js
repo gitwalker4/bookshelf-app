@@ -2,11 +2,22 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Droppable, Draggable } from 'react-beautiful-dnd'
 
-const BookStorage = (props) => {
+const BookStorage = (props,{removeBookFromShelf}) => {
   const books = useSelector(state => state.bookReducer.books)
 
+  const makeid = (length) => {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * 
+      charactersLength));
+    }
+    return result;
+  }
+
   return (
-    <Droppable droppableId='droppable-2'>
+    <Droppable droppableId={makeid(10)} direction='horizontal'>
       {(provided) => (
         <div className={props.className} ref={provided.innerRef} {...provided.droppableProps}>
           {books.slice(0,16).map((book, index) => (
