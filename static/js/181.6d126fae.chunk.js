@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkbookshelf_app=self.webpackChunkbookshelf_app||[]).push([[181],{786:function(e,s,l){l.r(s);l(791);var a=l(393),o=l(184);s.default=function(e){var s=e.item;return(0,o.jsx)(a.E.div,{layout:!0,children:(0,o.jsx)("div",{className:"book-row",children:(0,o.jsx)("h1",{className:"book-title",children:s.title})})})}}}]);
-//# sourceMappingURL=181.6d126fae.chunk.js.map
