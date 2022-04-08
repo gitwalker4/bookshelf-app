@@ -1,24 +1,28 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
 import Header from './components/Header'
-import Bookshelf from './components/Bookshelf'
+import BookStorage from './components/BookStorage'
+import { motion } from 'framer-motion'
+import { useSelector } from 'react-redux'
+import { DragDropContext } from 'react-beautiful-dnd'
 
 const App = () => {
-  const [books, setBooks] = useState([])
+  const books = useSelector(state => state.bookReducer.books)
 
-  const fetchBooks = async () => {
-    const result = await axios('https://gutendex.com/books/')
-    setBooks(result.data.results)
-  }
-
-  useEffect(() => {
-    fetchBooks()
-  }, [])
+  const reorder = (books, startIndex, endIndex) => {
+    const result = Array.from(books);
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
+  
+    return result;
+  };
 
   return (
     <>
-      <Header />
-      <Bookshelf books={books} />
+      <DragDropContext onDragEnd={reorder}>
+        <Header />
+        <motion.div layout>
+          <BookStorage className='book-storage' />
+        </motion.div>
+      </DragDropContext>
     </>
   )
 }
