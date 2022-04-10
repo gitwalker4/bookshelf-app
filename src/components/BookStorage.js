@@ -33,7 +33,7 @@ const BookStorage = (props) => {
                     <ul className='book-container' key={book.id} id='book' >
                       <li className='book' {...provided.dragHandleProps}>
                         <div className='book-cover'>
-                          <button className='delete-button' onClick={() => dispatch(removeBookFromShelf(book.id))}>X</button>
+                          <button className='delete-button' onClick={() => dispatch(removeBookFromShelf(book.id, book.title))}>X</button>
                           <h3>{book.title.slice(0,61)}</h3>
                             {book.authors.map((author) => (
                               <p className='book-author' key={author.name}>{author.name}</p>

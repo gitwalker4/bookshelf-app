@@ -7,7 +7,7 @@ export const fetchBooksRequest = () => ({
   type: FETCH_BOOKS_REQUEST
 })
 
-export const removeBookFromShelf = (id) => ({
+export const removeBookFromShelf = (id, title) => ({
   type: REMOVE_BOOK_REQUEST,
-  payload: {id}
+  payload: {id, title}
 })
