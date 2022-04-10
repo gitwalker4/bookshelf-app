@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/bookshelf-app/static/css/main.feef63d4.css",
-    "main.js": "/bookshelf-app/static/js/main.858b51ad.js",
+    "main.js": "/bookshelf-app/static/js/main.acf0ec6f.js",
     "static/media/bookshelf.webp": "/bookshelf-app/static/media/bookshelf.391924d57cb416a3be9a.webp",
     "index.html": "/bookshelf-app/index.html",
     "main.feef63d4.css.map": "/bookshelf-app/static/css/main.feef63d4.css.map",
-    "main.858b51ad.js.map": "/bookshelf-app/static/js/main.858b51ad.js.map"
+    "main.acf0ec6f.js.map": "/bookshelf-app/static/js/main.acf0ec6f.js.map"
   },
   "entrypoints": [
     "static/css/main.feef63d4.css",
-    "static/js/main.858b51ad.js"
+    "static/js/main.acf0ec6f.js"
   ]
 }
