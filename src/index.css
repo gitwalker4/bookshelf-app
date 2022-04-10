@@ -85,6 +85,21 @@ code {
   box-shadow: 3px 1px 5px #666;
 }
 
+.delete-button {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #965fef;
+  border-radius: 50px;
+}
+
+.delete-button:hover {
+  background-color: #965fef1a;
+}
+
 .book::before {
   position: absolute;
   content: ' ';
@@ -99,4 +114,8 @@ code {
   width: 58px;
   height: 200px;
   transform: translateY(-1px) translateX(-30px) rotateY(-90deg);
+}
+
+.hidden {
+  display: none;
 }

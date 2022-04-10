@@ -9,5 +9,5 @@ export const fetchBooksRequest = () => ({
 
 export const removeBookFromShelf = (id) => ({
   type: REMOVE_BOOK_REQUEST,
-  payload: id
+  payload: {id}
 })

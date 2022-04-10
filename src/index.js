@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import { combineReducers, createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import bookReducer from './redux/books/bookReducer'
-import bookSaga from './redux/books/bookSaga'
+import fetchBooksSaga from './redux/books/bookSaga'
 
 const sagaMiddleware = createSagaMiddleware()
 const rootReducer = combineReducers({ bookReducer })
@@ -14,7 +14,7 @@ const store = createStore(
   rootReducer,
   applyMiddleware(sagaMiddleware)
 )
-sagaMiddleware.run(bookSaga)
+sagaMiddleware.run(fetchBooksSaga)
 
 const container = document.getElementById('root')
 const root = createRoot(container)

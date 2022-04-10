@@ -9,8 +9,8 @@ import {
 
 const booksFetch = async () => {
   const result = await axios('https://gutendex.com/books/')
-  const bookshelfButton = document.getElementById('bookshelf-button')
-  bookshelfButton.style.display = 'none'
+  // When a book is deleted, the remaining books in the array will fill the bookshelf
+  // if this result is not desired, add .slice(0,16) so remaining books in array will not fill in
   return result.data.results
 }
 
@@ -23,14 +23,14 @@ function* fetchBooksSaga() {
   yield takeEvery(FETCH_BOOKS_REQUEST, workGetBooksFetch)
 }
 
-const workRemoveBooks = () => {
-  return put({type: REMOVE_BOOK_SUCCESS})
+function* workRemoveBook(action) {
+  yield put({type: REMOVE_BOOK_SUCCESS, action})
 }
 
 function* removeBookSaga() {
-  yield takeEvery(REMOVE_BOOK_REQUEST, workRemoveBooks)
+  yield takeEvery(REMOVE_BOOK_REQUEST, workRemoveBook)
 }
 
-export default function* rootSaga() {
+export default function* bookSaga() {
   yield all([fork(fetchBooksSaga), fork(removeBookSaga)])
 }
